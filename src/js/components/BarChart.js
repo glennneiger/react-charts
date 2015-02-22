@@ -24,9 +24,13 @@ module.exports = React.createClass( {
     createChart: function(el, data) {
         console.log('create');
 
+        console.log(el)
+
+        this._padding = 20;
+
         this._dimensions = {
-            width: 420,
-            barHeight: 20
+            width: el.offsetWidth - this._padding * 2,
+            barHeight: this.props.barWidth
         }; 
 
         
@@ -69,6 +73,13 @@ module.exports = React.createClass( {
                 return _this._scales.x(d.val);
             })
             .attr("height", this._dimensions.barHeight - 1);
+
+        bar.append("text")
+            .attr("x", function(d) { return _this._scales.x(d.val) - 20; })
+            .attr("y", this._dimensions.barHeight / 2)
+            .attr("dy", ".35em")
+            .attr('fill', 'white')
+            .text(function(d) { return d.val; });
 
     }
 });
