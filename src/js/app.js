@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Test = React.createClass({
+var App = React.createClass({
     render: function() {
         return (
             <div>
@@ -11,4 +11,4 @@ var Test = React.createClass({
     }
 });
 
-React.render(<Test />, document.getElementById('app'));
+React.render(<App />, document.getElementById('app'));

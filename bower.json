@@ -1,0 +1,22 @@
+{
+  "name": "react-charts",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mitchthorson/react-charts",
+  "authors": [
+    "Mitchell Thorson mitch.thorson@gmail.com"
+  ],
+  "description": "Creating some D3 charts via React components",
+  "main": "src/js/app.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}
