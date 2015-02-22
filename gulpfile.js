@@ -15,7 +15,7 @@ var clean = require('gulp-clean');
 
 var config = {
     'src': './src/',
-    'dest': './dist/'
+    'dest': './'
 };
 
 
