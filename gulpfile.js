@@ -95,6 +95,8 @@ gulp.task('lint', function() {
 gulp.task('watch', function() {
     gulp.watch(config.src + 'index.html', ['html']);
     gulp.watch(config.src + 'js/**/*.js', ['lint']);
+    gulp.watch(config.src + 'style/*', ['styles']);
+    gulp.watch(config.src + 'data/*', ['data']);
 });
 
 gulp.task('styles', function() {
@@ -104,11 +106,23 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(config.dest + 'style/'));
 });
 
+gulp.task('bootstrap', function() {
+    gulp.src('bower_components/bootstrap/dist/css/bootstrap.min.css')
+    .pipe(gulp.dest(config.dest + 'style/'));
+    reload();
+});
+
 gulp.task('clean:dest', function() {
     gulp.src(config.dest, {read: false})
     .pipe(clean())
 });
 
+gulp.task('data', function() {
+    gulp.src(config.src + 'data/*.json')
+    .pipe(gulp.dest(config.dest + 'data/'));
+    reload();
+});
+
 
 gulp.task('js', ['lint', 'browserify']);
-gulp.task('default', ['js', 'styles', 'html', 'browser-sync', 'watch']);
+gulp.task('default', ['js', 'styles', 'bootstrap', 'html', 'data', 'browser-sync', 'watch']);

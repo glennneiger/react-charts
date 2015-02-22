@@ -6,6 +6,10 @@
   "scripts": {
     "test": "jest"
   },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/mitchthorson/react-charts.git"
+  },
   "author": "Mitchell Thorson",
   "license": "ISC",
   "devDependencies": {
@@ -27,6 +31,8 @@
   },
   "dependencies": {
     "d3": "^3.5.5",
-    "react": "^0.12.2"
+    "lodash": "^3.3.0",
+    "react": "^0.12.2",
+    "reqwest": "^1.1.5"
   }
 }
