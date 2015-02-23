@@ -8,7 +8,7 @@ module.exports = React.createClass( {
     render: function() {
         return (
             <div 
-                className = 'bar-chart chart-item' 
+                className = 'bar-chart' 
             />
         );
     },
@@ -17,14 +17,13 @@ module.exports = React.createClass( {
         this.createChart(el, this.props.data);
     },
     componentDidUpdate: function() {
-        console.log('component did update');
-        console.log(this.props);
+      
         this.updateChart(this.getDOMNode, this.props.data);
     },
     createChart: function(el, data) {
-        console.log('create');
 
-        console.log(el)
+
+
 
         this._padding = 20;
 

@@ -104,6 +104,7 @@ gulp.task('styles', function() {
     .pipe(sass(sassOptions))
     .pipe(autoprefixer())
     .pipe(gulp.dest(config.dest + 'style/'));
+    reload();
 });
 
 gulp.task('bootstrap', function() {
