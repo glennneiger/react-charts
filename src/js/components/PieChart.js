@@ -8,7 +8,7 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div 
-                className = 'pie-chart chart-item' 
+                className = 'pie-chart' 
             />
         );
     },
@@ -21,16 +21,14 @@ module.exports = React.createClass({
         this.updateChart(this.getDOMNode, this.props.data);
     },
     createChart: function(el, data) {
-        console.log('create');
 
-        console.log(el)
 
         this._padding = 20;
 
         this._dimensions = {
-            width: (el.offsetWidth - this._padding * 2) / 4,
-            height: (el.offsetWidth - this._padding * 2) / 4,
-            radius: (el.offsetWidth - this._padding * 2) / 8
+            width: (el.offsetWidth - this._padding * 2),
+            height: (el.offsetWidth - this._padding * 2) / 2,
+            radius: (el.offsetWidth - this._padding * 2) / 4
         }; 
 
         
@@ -51,11 +49,7 @@ module.exports = React.createClass({
     },
 
     updateChart: function(el, data) {
-        console.log('update');
-        console.log(data);
-
         
-
         this._scales = {
             arc: d3.svg.arc()
                 .outerRadius( this._dimensions.radius)
@@ -90,4 +84,4 @@ module.exports = React.createClass({
               .text(function(d) { return d.value; });
 
     }
-})
+});
